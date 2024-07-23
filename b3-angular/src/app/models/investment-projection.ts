@@ -1,4 +1,4 @@
 export class InvestmentProjection {
-    total: number = 0;
-    taxes: number = 0;
+    grossValue: number = 0;
+    netValue: number = 0;
 }

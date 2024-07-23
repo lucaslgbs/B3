@@ -1,7 +1,7 @@
 namespace B3.Domain.Dto;
 
-public record InvestmentProjectionDto(double Total, double Taxes)
+public record InvestmentProjectionDto(double GrossValue, double NetValue)
 {
-    public double Total { get; set; } = Total;
-    public double Taxes { get; set; } = Taxes;
+    public double GrossValue { get; set; } = GrossValue;
+    public double NetValue { get; set; } = NetValue;
 }

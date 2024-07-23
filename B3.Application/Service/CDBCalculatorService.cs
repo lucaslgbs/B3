@@ -29,6 +29,6 @@ public class CDBCalculatorService : ICalculatorService
         
         var tax = await _investmentTaxRepository.GetTax(dto.Months);
         
-        return new InvestmentProjectionDto(investmentValue, (investmentValue - initialInvestment) * tax.Value);
+        return new InvestmentProjectionDto(investmentValue, investmentValue - ((investmentValue - initialInvestment) * tax.Value));
     }
 }

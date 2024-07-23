@@ -11,9 +11,8 @@
     @if (investmentProjection != null)
     {
         <div class="result">
-            <h3>Valor total: {{ investmentProjection.total  }}</h3>
-            <h3>Impostos: {{ investmentProjection.taxes }} </h3>
-            <h3>Valor líquido: {{ investmentProjection.total - investmentProjection.taxes }}</h3>
+            <h3>Valor total: {{ investmentProjection.grossValue  }}</h3>
+            <h3>Valor líquido: {{ investmentProjection.netValue }}</h3>
         </div>
     }
 </div>
