@@ -1,0 +1,32 @@
+.form-cdb {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    gap: 10px;
+}
+
+input {
+    height: 35px;
+    border-radius: 5px;
+    border: solid black 2px;
+    font-size: 1.5rem;
+}
+
+button {
+    height: 35px;
+    border: solid black 2px;
+    border-radius: 5px;
+    background-color: #62ed62;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

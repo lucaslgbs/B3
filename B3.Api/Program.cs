@@ -15,6 +15,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var devCorsPolicy = "devCorsPolicy";
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 builder.Services.AddScoped<ICalculatorService, CDBCalculatorService>();
 builder.Services.AddScoped<IInvestmentTaxRepository, InvestmentTaxRepository>();
 builder.Services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<InvestmentCalculatorValidator>());
@@ -29,7 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("corsapp");
 app.UseAuthorization();
 
 app.MapControllers();
