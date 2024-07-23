@@ -1,0 +1,3 @@
+-Execute o projeto .net e o projeto angular
+-Para calcular preencha o valor do investimento e o total de meses e clique em calcular, o valor será retornado com todas as casas decimais
+-Os erros de badrequest estão sendo capturados e logados no console
