@@ -32,7 +32,7 @@ public class CdbCalculatorServiceTest
     }
     
     [Test]
-    public void CDBCalculateTests_Tax6Success()
+    public void CdbCalculateTests_Tax6Success()
     {
         var mock = new InvestmentCalculationDto(1000, 6);
 

@@ -4,10 +4,10 @@ using NUnit.Framework;
 namespace B3.Test.Service;
 
 [TestFixture]
-public class CDBCalculatorTest
+public class CdbCalculatorTest
 {
     [Test]
-    public void CDBCalculateTests()
+    public void CdbCalculateTests()
     {
         var result1 = CdbCalculator.Calculate(1000, 1.08, 0.009);
         Assert.That(result1, Is.EqualTo(1009.7199999999999));
