@@ -4,6 +4,7 @@ using B3.Domain.Dto;
 using B3.Domain.Interface.Repository;
 using B3.Domain.Interface.Service;
 using B3.Infra.Repository;
+using FluentValidation;
 using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,15 +16,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var devCorsPolicy = "devCorsPolicy";
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
 
-builder.Services.AddScoped<ICalculatorService, CDBCalculatorService>();
+builder.Services.AddScoped<ICalculatorService, CdbCalculatorService>();
 builder.Services.AddScoped<IInvestmentTaxRepository, InvestmentTaxRepository>();
-builder.Services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<InvestmentCalculatorValidator>());
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssembly(typeof(InvestmentCalculatorValidator).Assembly);
 
 var app = builder.Build();
 

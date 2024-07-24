@@ -1,6 +1,6 @@
 namespace B3.Domain.Utils;
 
-public static class CDBCalculator
+public static class CdbCalculator
 {
     public static double Calculate(double investmentValue, double tb, double cdi)
     {

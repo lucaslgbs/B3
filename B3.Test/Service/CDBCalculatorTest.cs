@@ -9,13 +9,13 @@ public class CDBCalculatorTest
     [Test]
     public void CDBCalculateTests()
     {
-        var result1 = CDBCalculator.Calculate(1000, 1.08, 0.009);
-        Assert.AreEqual(1009.7199999999999, result1);
+        var result1 = CdbCalculator.Calculate(1000, 1.08, 0.009);
+        Assert.That(result1, Is.EqualTo(1009.7199999999999));
         
-        var result2 = CDBCalculator.Calculate(1, 1.08, 0.009);
-        Assert.AreEqual(1.00972, result2);
+        var result2 = CdbCalculator.Calculate(1, 1.08, 0.009);
+        Assert.That(result2, Is.EqualTo(1.00972));
         
-        var result3 = CDBCalculator.Calculate(0.01, 1.08, 0.009);
-        Assert.AreEqual(0.010097199999999999, result3);
+        var result3 = CdbCalculator.Calculate(0.01, 1.08, 0.009);
+        Assert.That(result3, Is.EqualTo(0.010097199999999999));
     }
 }
